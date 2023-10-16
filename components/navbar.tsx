@@ -1,13 +1,10 @@
-import { Button } from "@/components/ui/button";
+import MobileSidebar from "@/components/mobile-sidebar";
 import { UserButton } from "@clerk/nextjs";
-import { Menu } from "lucide-react";
 
 const Navbar = () => {
   return (
     <div className="flex items-center p-4">
-      <Button size="icon" variant="ghost" className="md:hidden">
-        <Menu />
-      </Button>
+      <MobileSidebar />
       <div className="flex w-full justify-end">
         <UserButton afterSignOutUrl="/" />
       </div>
