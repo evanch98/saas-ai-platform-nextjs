@@ -13,6 +13,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { ChatCompletionMessage } from "openai/resources/index.mjs";
+import { Empty } from "@/components/empty";
 
 const ConversationPage = () => {
   const router = useRouter();
