@@ -1,5 +1,11 @@
+import { Heading } from "@/components/heading";
+
 const ConversationPage = () => {
-  return <div>Hello Conversation</div>;
+  return (
+    <div>
+      <Heading />
+    </div>
+  );
 };
 
 export default ConversationPage;
