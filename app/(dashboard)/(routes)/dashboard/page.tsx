@@ -1,5 +1,17 @@
 "use client";
 
+import { MessageSquare } from "lucide-react";
+
+const tools = [
+  {
+    label: "Conversation",
+    icon: MessageSquare,
+    color: "text-violet-500",
+    bgColor: "bg-violet-500/10",
+    href: "/conversation",
+  },
+];
+
 const DashboardPage = () => {
   return (
     <div>
