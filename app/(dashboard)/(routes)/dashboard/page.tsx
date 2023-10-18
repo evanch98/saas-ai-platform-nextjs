@@ -7,6 +7,7 @@ import {
   Code,
   ImageIcon,
   MessageSquare,
+  Music,
   Video,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -35,7 +36,7 @@ const tools = [
   },
   {
     label: "Music Generation",
-    icon: ImageIcon,
+    icon: Music,
     color: "text-emerald-500",
     bgColor: "bg-emerald-500/10",
     href: "/music",
