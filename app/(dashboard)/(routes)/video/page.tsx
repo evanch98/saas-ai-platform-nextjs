@@ -17,7 +17,7 @@ import { Loader } from "@/components/loader";
 
 const VideoPage = () => {
   const router = useRouter();
-  const [music, setMusic] = useState<string>();
+  const [video, setVideo] = useState<string>();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -30,11 +30,11 @@ const VideoPage = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      setMusic(undefined);
+      setVideo(undefined);
 
-      const response = await axios.post("/api/music", values);
+      const response = await axios.post("/api/video", values);
 
-      setMusic(response.data.audio);
+      setVideo(response.data[0]);
       form.reset();
     } catch (error: any) {
       // TODO: Open Pro Modal
@@ -69,7 +69,7 @@ const VideoPage = () => {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="Piano solo"
+                        placeholder="Clown fish swimming around a coral reef."
                         {...field}
                       />
                     </FormControl>
@@ -91,11 +91,14 @@ const VideoPage = () => {
               <Loader />
             </div>
           )}
-          {!music && !isLoading && <Empty label="No music generated." />}
-          {music && (
-            <audio controls className="w-full mt-8">
-              <source src={music} />
-            </audio>
+          {!video && !isLoading && <Empty label="No video generated." />}
+          {video && (
+            <video
+              controls
+              className="w-full aspect-video mt-8 rounded-lg border bg-black"
+            >
+              <source src={video} />
+            </video>
           )}
         </div>
       </div>
