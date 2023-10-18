@@ -45,10 +45,7 @@ const ConversationPage = () => {
         messages: newMessages,
       });
 
-      console.log(response.data);
-
       setMessages((current) => [...current, userMessage, response.data]);
-
       form.reset();
     } catch (error: any) {
       // TODO: Open Pro Modal
@@ -62,7 +59,7 @@ const ConversationPage = () => {
     <div>
       <Heading
         title="Conversation"
-        description="Our most advanced conversation model"
+        description="Our most advanced conversation model."
         icon={MessageSquare}
         iconColor="text-violet-500"
         bgColor="bg-violet-500/10"
