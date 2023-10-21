@@ -3,6 +3,7 @@
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
@@ -23,6 +24,7 @@ export const ProModal = () => {
               </Badge>
             </div>
           </DialogTitle>
+          <DialogDescription className="text-center pt-2 space-y-2 text-zinc-900 font-medium"></DialogDescription>
         </DialogHeader>
       </DialogContent>
     </Dialog>
