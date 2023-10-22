@@ -55,6 +55,8 @@ export async function GET() {
         userId,
       },
     });
+
+    return new NextResponse(JSON.stringify({ url: stripeSession.url }));
   } catch (error) {
     console.log("[STRIPE_ERROR]", error);
     return new NextResponse("Internal error", { status: 500 });
