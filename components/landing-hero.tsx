@@ -1,6 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { useAuth } from "@clerk/nextjs";
+import Link from "next/link";
 import TypewriterComponent from "typewriter-effect";
 
 export const LandingHero = () => {
@@ -25,6 +27,14 @@ export const LandingHero = () => {
             }}
           />
         </div>
+      </div>
+      <div className="text-sm md:text-xl font-light text-zinc-400">
+        Create content using AI 10x faster.
+      </div>
+      <div>
+        <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
+          <Button></Button>
+        </Link>
       </div>
     </div>
   );
